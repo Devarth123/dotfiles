@@ -1,0 +1,43 @@
+[battery]                                                                                                             
+full_symbol = "   "                                                                                                  
+charging_symbol = " "                                                                                                
+[[battery.display]] # "bold red" style and discharging_symbol when capacity is between 0% and 10%                     
+threshold = 25                                                                                                        
+style = "bold red"                                                                                                    
+discharging_symbol = "  "                                                                                            
+                                                                                                                      
+[[battery.display]] # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%                          
+threshold = 50                                                                                                        
+style = "bold yellow"                                                                                                 
+discharging_symbol = "  "                                                                                            
+                                                                                                                      
+# when capacity is over 30%, the battery indicator will not be displayed                                              
+[[battery.display]]                                                                                                   
+threshold = 70                                                                                                        
+style = "bold green"                                                                                                  
+discharging_symbol = "  "                                                                                            
+                                                                                                                      
+[[battery.display]]                                                                                                   
+threshold = 100                                                                                                       
+style = "green"                                                                                                       
+discharging_symbol = "  "                                                                                            
+                                                                                                                      
+[character]                                                                                                           
+success_symbol = "[➜](bold green) "                                                                                   
+error_symbol = "[✗](bold red) "                                                                                       
+                                                                                                                      
+[rust]                                                                                                                
+format = "via [ $version](red bold) "                                                                                 
+                                                                                                                      
+[c]                                                                                                                   
+format = "via [C $version](green bold)"                                                                               
+                                                                                                                      
+[python]                                                                                                              
+symbol = " "                                                                                                         
+#pyenv_version_name = true                                                                                            
+python_binary = ["python", "python3"]                                                                                 
+# ~/.config/starship.toml                                                                                             
+                                                                                                                      
+[directory]                                                                                                           
+truncation_length = 8                                                                                                 
+truncate_to_repo  = false   

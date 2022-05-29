@@ -1,0 +1,70 @@
+
+#: Fonts {{{
+font_family      JetBrains Mono Nerd Font
+bold_font        JetBrainsMono Nerd Font Mono
+italic_font      JetBrainsMono Nerd Font Mono
+bold_italic_font JetBrainsMono Nerd Font
+font_size 14.0
+#: }}}
+
+#: Cursor customization {{{
+#: }}}
+
+#: Scrollback {{{
+#: }}}
+
+#: Mouse {{{
+#: }}}
+
+#: Performance tuning {{{
+#: }}}
+
+#: Terminal bell {{{
+enable_audio_bell no
+#: }}}
+
+#: Window layout {{{
+enabled_layouts splits
+window_padding_width 0 0 0 5
+#: }}}
+
+#: Tab bar {{{
+#: }}}
+
+#: Color scheme {{{
+background_opacity 0.940
+include ./theme.conf
+#: }}}
+
+#: Advanced {{{
+#: }}}
+
+#: OS specific tweaks {{{
+#: }}}
+
+#: Keyboard shortcuts {{{
+kitty_mod alt
+#: }}}
+
+#: Clipboard {{{
+#: }}}
+
+#: Scrolling {{{
+#: }}}
+
+#: Window management {{{
+map kitty_mod+space launch --location=vsplit
+map kitty_mod+h launch --location=hsplit
+#: }}}
+
+#: Tab management {{{
+map kitty_mod+tab     move_tab_forward
+map kitty_mod+alt+t new_tab
+#: }}}
+
+
+
+# BEGIN_KITTY_THEME
+# Ayu Mirage
+include current-theme.conf
+# END_KITTY_THEME
