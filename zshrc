@@ -28,10 +28,12 @@ alias gitp='
             print "commit message " 
             read message
             git commit -am "${message}"
+            git status
             git push origin master'
 alias cc='cargo c'
 alias cb='cargo b'
 alias rr='ranger'
+alias gst='git status'
 alias i='>> ~/logs/pacman_install.log'
 alias play='vlc ~/songs'
 alias h="htop"
