@@ -16,11 +16,17 @@ linux_version=$(uname -r | cut -d '-' -f1)
 
 # Returns the battery status: "Full", "Discharging", or "Charging".
 battery_status=$(cat /sys/class/power_supply/BAT0/capacity)
+vol=$(pactl list sinks | grep '^[[:space:]]Volume:' | \
+    head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+
+cpu=$(top -bn1 | grep "Cpu(s)" | \
+           sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | \
+           awk '{print 100 - $1"%"}')
 
 
 
 # Emojis and characters for the status bar
 # 💎 💻 💡 🔌 ⚡ 📁 \|
-echo " "$uptime_formatted  "  "  $linux_version "  " $battery_status "   " $date_formatted
+echo "  "$(light)"   "$cpu " 墳" $vol "  " $uptime_formatted  "  "  $linux_version "  " $battery_status "   " $date_formatted 
 
 
