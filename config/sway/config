@@ -21,7 +21,9 @@ set $term foot
 xwayland disable 
 set $menu /usr/bin/yofi
 #gaps inner 50 
-font pango:Caskaydia Cove Nerd Font Regular 9 
+
+font pango:JetBrainsMono Nerd font 9 
+#font pango:Caskaydia Cove Nerd Font Regular 9 
 gaps inner 5
 gaps outer 5
 ### Output configuration
