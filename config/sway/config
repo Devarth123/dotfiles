@@ -8,22 +8,23 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
+
+bindsym Mod4+a exec /usr/bin/autostart.sh
+bindsym Mod4+l exec swaylock
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $browser librewolf
+set $browser firefox
 set $term foot 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened on the original workspace that the command was run on.
-xwayland disable 
-set $menu /usr/bin/yofi
+#xwayland disable 
+set $menu /usr/bin/dmenu_run -l 30
 #gaps inner 50 
-
-font pango:JetBrainsMono Nerd font 9 
-#font pango:Caskaydia Cove Nerd Font Regular 9 
+font pango:JetBrainsMono Nerd Font Regular 9 
 gaps inner 5
 gaps outer 5
 ### Output configuration
@@ -76,6 +77,7 @@ gaps outer 5
     bindsym XF86MonBrightnessDown exec light -U 5
 
     bindsym $mod+Return exec $term
+    bindsym $mod+Shift+e exec st -e nvim
 
     # Kill focused window
     bindsym $mod+Shift+c kill
@@ -94,7 +96,7 @@ gaps outer 5
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -155,7 +157,7 @@ gaps outer 5
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    #bindsym $mod+s layout stacking
     bindsym $mod+t layout tabbed
     bindsym $mod+e layout toggle split
 
