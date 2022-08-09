@@ -22,7 +22,7 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened on the original workspace that the command was run on.
 #xwayland disable 
-set $menu /usr/bin/dmenu_run -l 30
+set $menu /usr/bin/dmenu_run -l 30 -fn "JetBrainsMono Nerd Font-9" 
 #gaps inner 50 
 font pango:JetBrainsMono Nerd Font Regular 9 
 gaps inner 5
@@ -96,10 +96,9 @@ gaps outer 5
     bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
-# Moving around:
-#
+    bindsym $mod+Shift+x exec killall sway
+# Moving around:#
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down bindsym $mod+$up focus up
@@ -163,7 +162,8 @@ gaps outer 5
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
-
+    bindsym $mod+Shift+p exec  zathura "$(fd -e pdf -a | dmenu -fn "JetBrainsMono Nerd Font-9" -l 20 -i -p "open pdf: ")"
+    bindsym $mod+s exec mpv "$(fd -e webm -a | dmenu -fn "JetBrainsMono Nerd Font-9" -l 20 -i -p "Play: ")"
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
