@@ -1,46 +1,11 @@
 --- dmenu.c
 +++ dmenu.c
-@@ -26,16 +26,14 @@
- #define TEXTW(X)              (drw_fontset_getwidth(drw, (X)) + lrpad)
- 
- /* enums */
--enum { SchemeNorm, SchemeSel, SchemeHp, SchemeOut, SchemeLast }; /* color schemes */
-+enum { SchemeNorm, SchemeSel, SchemeOut, SchemeLast }; /* color schemes */
- 
- struct item {
- 	char *text;
- 	struct item *left, *right;
--	int out, hp;
-+	int out;
- };
- 
--static char **hpitems = NULL;
--static int hplength = 0;
- static char text[BUFSIZ] = "";
- static char *embed;
- static int bh, mw, mh;
-@@ -710,8 +656,7 @@ static void
+@@ -700,7 +711,7 @@ setup(void)
+ static void
  usage(void)
  {
- 	fputs("usage: dmenu [-bfiv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
--	      "             [-nb color] [-nf color] [-sb color] [-sf color] [-w windowid]\n"
--	      "             [-hb color] [-hf color] [-hp items]\n", stderr);
-+	      "             [-nb color] [-nf color] [-sb color] [-sf color] [-w windowid]\n", stderr);
+-	fputs("usage: dmenu [-bfiv] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
++	fputs("usage: dmenu [-bfivP] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
+ 	      "             [-nb color] [-nf color] [-sb color] [-sf color] [-w windowid]\n", stderr);
  	exit(1);
  }
- 
-@@ -752,14 +697,8 @@ main(int argc, char *argv[])
- 			colors[SchemeSel][ColBg] = argv[++i];
- 		else if (!strcmp(argv[i], "-sf"))  /* selected foreground color */
- 			colors[SchemeSel][ColFg] = argv[++i];
--		else if (!strcmp(argv[i], "-hb"))  /* high priority background color */
--			colors[SchemeHp][ColBg] = argv[++i];
--		else if (!strcmp(argv[i], "-hf")) /* low priority background color */
--			colors[SchemeHp][ColFg] = argv[++i];
- 		else if (!strcmp(argv[i], "-w"))   /* embedding window id */
- 			embed = argv[++i];
--		else if (!strcmp(argv[i], "-hp"))
--			hpitems = tokenize(argv[++i], ",", &hplength);
- 		else
- 			usage();
- 
