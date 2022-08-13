@@ -8,4 +8,4 @@
 ![image](https://raw.githubusercontent.com/Devarth123/dotfiles/master/1656658993.png)
 
 ## Sway
-![image](https://raw.githubusercontent.com/Devarth123/dotfiles/master/1659892631.png)
+![image](https://raw.githubusercontent.com/Devarth123/dotfiles/master/1660377855.png)
