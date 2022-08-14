@@ -27,6 +27,8 @@ set $menu /usr/bin/dmenu_run -l 30 -fn "JetBrainsMono Nerd Font-9"
 font pango:JetBrainsMono Nerd Font Regular 9 
 gaps inner 5
 gaps outer 5
+hide_edge_borders smart
+smart_gaps on
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -77,7 +79,7 @@ gaps outer 5
     bindsym XF86MonBrightnessDown exec light -U 5
 
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+e exec st -e nvim
+    bindsym $mod+Shift+e exec $term -e nvim
 
     # Kill focused window
     bindsym $mod+Shift+c kill
