@@ -6,6 +6,7 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces", "custom/media"],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio","cpu", "memory", "backlight", "battery", "battery#bat2", "clock", "tray" ],
     // Modules configuration
     // "sway/workspaces": {
@@ -24,6 +25,9 @@
     //     }
     // },
     
+    "hyprland/window": {
+    "format": "{}"
+    },
     "wlr/workspaces": {
 	"format": "{icon}",
 	"format-icons": {
@@ -43,7 +47,7 @@
   },
   "disk": {
     "interval": 30,
-    "format": "{used}/{free}",
+    "format": "{used}",
     "path": "/"
 },
     "keyboard-state": {
